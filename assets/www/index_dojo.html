@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>PioDroidDojoUee</title>
+    <link href="libs/dojo/dojox/mobile/themes/android/android.css" rel="stylesheet"></link>
+    <!-- stylesheet will go here -->
+	
+    <!-- dojo/javascript will go here -->
+      <script src="js/OpenLayers.js"></script>
+    <script src="libs/dojo/dojo/dojo.js" djConfig="isDebug:true, parseOnLoad:true"></script>
+    <script>
+		// Load the widget parser
+		dojo.require("dojox.mobile.parser");
+		// Load the base lib
+		dojo.require("dojox.mobile");
+		// If not a WebKit-based client, load compat
+		dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
+    </script>
+ 
+    </head>
+    <body>
+	<!-- the view or "page"; select it as the "home" screen -->
+	<div id="home" dojoType="dojox.mobile.View" selected="true">
+	 
+		<!-- a sample heading -->
+		<h1 dojoType="dojox.mobile.Heading">PioDroid Uee</h1>
+	 
+		<!-- a rounded rectangle list container -->
+		<ul dojoType="dojox.mobile.RoundRectList">
+	 
+			<li dojoType="dojox.mobile.ListItem">
+				Selamat Datang di Aplikasi PioDroid Uee
+			</li>
+	 
+			<!-- list item with an icon that slides to a view called "general" -->
+			<li dojoType="dojox.mobile.ListItem" icon="img/avatar3.png" rightText="Byul" moveTo="general">
+				Kang Byul
+			</li>
+		</ul>
+	</div>
+	<!-- The "General" sub-page -->
+	<div id="general" dojoType="dojox.mobile.View">
+		<!-- a sample heading -->
+		<h1 dojoType="dojox.mobile.Heading" back="Home" moveTo="home">PioDroid Uee</h1>
+		<!-- a rounded rectangle list container -->
+		<ul dojoType="dojox.mobile.RoundRectList">
+			<li dojoType="dojox.mobile.ListItem">
+			About
+			</li>
+			<li dojoType="dojox.mobile.ListItem" rightText="2h 40m" moveTo="about">
+			Usage
+			</li>
+		</ul>
+	</div>
+	 
+	<!-- And let's add another view "About" -->
+	<div id="about" dojoType="dojox.mobile.View">
+		<!-- Main view heading -->
+		<h1 dojoType="dojox.mobile.Heading" back="General" moveTo="general">About</h1>
+		<!-- subheading -->
+		<h2 dojoType="dojox.mobile.RoundRectCategory">Generic Mobile Device</h2>
+		<!-- a rounded rectangle list container -->
+		<ul dojoType="dojox.mobile.RoundRectList">
+			<li dojoType="dojox.mobile.ListItem" rightText="AcmePhone">
+			Network                                           
+			</li>                                               
+			<li dojoType="dojox.mobile.ListItem" rightText="AcmePhone">
+			Line
+			</li>
+			<li dojoType="dojox.mobile.ListItem" rightText="1024">
+			Songs
+			</li>
+			<li dojoType="dojox.mobile.ListItem" rightText="10">
+			Videos
+			</li>
+		</ul>
+	</div>
+    </body>
+</html>
